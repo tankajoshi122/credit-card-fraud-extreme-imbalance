@@ -1,0 +1,164 @@
+{
+  "seed": 42,
+  "split": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "remove_exact_duplicates": true,
+  "scaling": "StandardScaler fitted on original training data only",
+  "sampling_strategy": 0.1,
+  "smote_k_neighbors": 5,
+  "samplers": {
+    "Standard RF": null,
+    "Weighted RF": null,
+    "RUS + RF": {
+      "name": "RandomUnderSampler",
+      "parameters": {
+        "random_state": 42,
+        "replacement": false,
+        "sampling_strategy": 0.1
+      }
+    },
+    "ROS + RF": {
+      "name": "RandomOverSampler",
+      "parameters": {
+        "random_state": 42,
+        "sampling_strategy": 0.1,
+        "shrinkage": null
+      }
+    },
+    "SMOTE + RF": {
+      "name": "SMOTE",
+      "parameters": {
+        "k_neighbors": 5,
+        "random_state": 42,
+        "sampling_strategy": 0.1
+      }
+    }
+  },
+  "threshold_selection": "Maximum validation F1; first maximum in ascending threshold order",
+  "alert_budget": 50,
+  "alert_tie_break": "Stable descending score sort, original test row order",
+  "model_parameters": {
+    "Standard RF": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "Weighted RF": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "RUS + RF": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "ROS + RF": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "SMOTE + RF": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "selected_thresholds": {
+    "Standard RF": 0.4896214578836004,
+    "Weighted RF": 0.6144825782999406,
+    "RUS + RF": 0.6915146146163945,
+    "ROS + RF": 0.43968545974906253,
+    "SMOTE + RF": 0.5641856228237834
+  },
+  "versions": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "imbalanced-learn": "0.14.2"
+  }
+}
